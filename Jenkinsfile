@@ -10,8 +10,8 @@ pipeline {
         CURRENT_STAGE = ''
         NAME = "retrosquad/polytechniquedefi"
         VERSION = "${env.BUILD_ID}"
-        DOCKERHUB_USERNAME = retrosquad
-        DOCKERHUB_PASSWORD = nuitdinfo2023
+        DOCKERHUB_USERNAME = 'retrosquad'
+        DOCKERHUB_PASSWORD = 'nuitdinfo2023'
 
     }
 
