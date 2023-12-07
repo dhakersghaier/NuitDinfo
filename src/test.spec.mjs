@@ -5,7 +5,7 @@ describe('HelloWorld', () => {
   it('renders properly', () => {
     const wrapper = mount(HelloWorld, {
       props: {
-        msg: 'Hello, World!',
+        msg: 'Hello, Polytechnique!',
       },
     });
 
