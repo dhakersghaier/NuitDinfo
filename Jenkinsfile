@@ -8,8 +8,11 @@ pipeline {
     environment {
         DOCKER_IMAGE_TAG = ""
         CURRENT_STAGE = ''
-        NAME = "dhakersg/vue-js-app"
+        NAME = "retrosquad/polytechniquedefi"
         VERSION = "${env.BUILD_ID}"
+        DOCKERHUB_USERNAME = retrosquad
+        DOCKERHUB_PASSWORD = nuitdinfo2023
+
     }
 
 
@@ -45,10 +48,10 @@ pipeline {
                 script {
                     CURRENT_STAGE = 'Push to Docker Hub'
                     try {
-                        withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials-id', passwordVariable: 'DOCKERHUB_PASSWORD', usernameVariable: 'DOCKERHUB_USERNAME')]) {
+                        
                             sh "docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD"
-                            sh "docker push dhakersg/vue-js-app:latest"
-                        }
+                            sh "docker push ${NAME}:${VERSION}"
+    
                     } catch (Exception e) {
                         currentBuild.result = 'FAILURE'
                         error("Push to Docker Hub failed: ${e.message}")
