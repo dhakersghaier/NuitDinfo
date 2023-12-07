@@ -19,8 +19,8 @@ pipeline {
             steps {
                 // Specify the Git repository URL
                 script {
-                    def gitUrl = 'https://github.com/your-username/your-repository.git'
-                    checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: gitUrl]]])
+                    def gitUrl = 'https://github.com/dhakersghaier/NuitDinfo'
+                    checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/dhakersghaier/NuitDinfo']]])
                 }
             }
     }
